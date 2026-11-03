@@ -27,3 +27,8 @@ The vulnerable version returned complete internal records from `/api/opportuniti
 ## Safe use
 
 All records are fictional. This project is a local educational demonstration and contains no real participant data, credentials, or API keys.
+
+NOTE!! 
+I published this project on NextWork.ai, go check it out!
+https://nextwork.ai/projects/1dd851b7-594e-4f70-b169-c093322d3c28
+
