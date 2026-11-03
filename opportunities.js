@@ -21,4 +21,17 @@ const opportunities = [
     }
 ];
 
-module.exports ={ opportunities, };
+function toPublicOpportunity(opportunity) {
+    return {
+        id: opportunity.id,
+        title: opportunity.title,
+        organization: opportunity.organization,
+        location: opportunity.location,
+        deadline: opportunity.deadline,
+        summary: opportunity.summary
+    };
+}
+function getPublicOpportunities() {
+    return opportunities.map(toPublicOpportunity);
+}
+module.exports ={ opportunities, toPublicOpportunity, getPublicOpportunities };
