@@ -19,3 +19,8 @@ const server = http.createServer((request, response) => {
 server.listen(PORT, HOST, () => {
     console.log(`Youth Opportunities API running at http://${HOST}:${PORT}/`);
 });
+
+if(request.method === 'GET' && request.url === '/api/opportunities') {
+    send(response, 200, 'application/json; charset=utf-8', JSON.stringify(opportunities));
+    return;
+}
