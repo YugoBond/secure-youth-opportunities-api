@@ -16,6 +16,17 @@ const server = http.createServer((request, response) => {
     send(response, 200, 'application/json; charset=utf-8', JSON.stringify(opportunities));
     return;
 }
+if (request.method === 'GET' && request.url === '/') {
+    const pagePath = path.join(__dirname, 'public', 'index.html');
+    fs.readFile(pagePath, 'utf8', (error, html) => {
+        if (error) {
+            send(response, 500, 'application/json; charset=utf-8', JSON.stringify({error: 'Could not load the dashboard'}));
+            return;
+        }
+        send(response, 200, 'text/html; charset=utf-8', html);
+    });
+    return;
+}
     send(response, 404, 'application/json; charset=utf-8', JSON.stringify({error: 'Not Found'}),
 );
 });
